@@ -10,7 +10,7 @@ const App: React.FC = () => {
     let keyElement: any = event.currentTarget.firstChild;
     if (keyElement) {
       keyElement.play();
-      setTriggeredPad(keyElement.currentSrc);
+      setTriggeredPad(event.currentTarget.id);
     }
   };
 
@@ -18,7 +18,7 @@ const App: React.FC = () => {
     let keyElement: any = document.getElementById(event.key.toUpperCase());
     if (keyElement) {
       keyElement.play();
-      setTriggeredPad(keyElement.currentSrc);
+      setTriggeredPad(keyElement.parentElement.id);
     }
   };
   document.body.addEventListener("keyup", handleKeyUp);
